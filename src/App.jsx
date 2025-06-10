@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { DashboardMenu } from "./components/DashboardMenu";
 import { Dashboard } from "./Pages/Dashboard";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
