@@ -1,23 +1,43 @@
 import React from "react";
 
-export const Navbar = () => {
+export const Navbar = ({ onMenuClick }) => {
   return (
     <nav className="bg-white shadow-md font-sans">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Left side - Logo */}
-          <div className="flex-shrink-0">
-            <img
-              width="48"
-              height="48"
-              src="https://img.icons8.com/color/48/mosque.png"
-              alt="mosque logo"
-              className="h-8 w-auto"
-            />
+          {/* Left side - Menu Button and Logo */}
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={onMenuClick}
+              className="md:hidden p-2 rounded-md hover:bg-gray-100"
+            >
+              <svg
+                className="h-6 w-6 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+            <div className="flex-shrink-0">
+              <img
+                width="48"
+                height="48"
+                src="https://img.icons8.com/color/48/mosque.png"
+                alt="mosque logo"
+                className="h-8 w-auto"
+              />
+            </div>
           </div>
 
           {/* Middle section - Search and Notifications */}
-          <div className="flex-1 flex items-center justify-center px-4">
+          <div className="hidden md:flex flex-1 items-center justify-center px-4">
             <div className="w-full max-w-lg flex items-center space-x-4">
               {/* Search Bar */}
               <div className="flex-1">
@@ -67,7 +87,9 @@ export const Navbar = () => {
 
           {/* Right side - Account */}
           <div className="flex items-center space-x-4">
-            <span className="text-gray-800 font-medium">John Doe</span>
+            <span className="hidden md:block text-gray-800 font-medium">
+              John Doe
+            </span>
             <button className="flex items-center space-x-2 p-2 rounded-full hover:bg-gray-100">
               <img
                 src="https://ui-avatars.com/api/?name=John+Doe"
